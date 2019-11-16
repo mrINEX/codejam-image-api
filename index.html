@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>codejam-image-api</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <span>Desktop - CodeJam Task</span>
+    <main>
+        <div class='appbar'>
+            <img id="menu" src="sheets/nav icon.png">
+            <span id='cj'>CodeJam - Image API</span>
+            <img id="dots" src="sheets/menu icon.png" height="100%">
+        </div>
+        
+        <div id="b" class="select">
+            <div class='fifty'>
+                <div class="icon fill" onclick="fill()"><img src="sheets/icon-sh.png">Fill bucket</div>
+                <div class="icon choose" onclick="choose()"><img src="sheets/icon-upload.png">Choose color</div>
+                <div class="icon pencil" onclick="pencil()"><img class='bigger' src="sheets/pencil.png">Pencil</div>
+            </div>
+        </div>
+        <div id="c" class="select">
+            <div>
+                <div class="icon"> <input value="#00ff00" type='color' class="round" name="cur" id="cur"><label for="cur">Current color</label></div>
+                <div class="icon bord"><div id="pre" class="round"></div>Prev color</div>
+            </div>
+            <div>
+                <div class="icon"><div class="round" id="red"></div>red</div>
+                <div class="icon"><div class="round" id="blue"></div>blue</div>
+            </div>
+        </div>
+        <div class="wrapperCan">
+            <div class="oneline">
+                <div class="load">
+                    <span id="getlink" class="l">Load</span>
+                </div>
+                <div class="inp">
+                    <img src="sheets/search.png">
+                    <input id="i" type="text">
+                </div>
+                <div class="gb">
+                    <span id="grayscalebtn" class="l">B&W</span>
+                </div>
+            </div>
+            <canvas id="myCanvas">Your browser doesn't support canvas!</canvas>
+            <input id="range" type="range" min="128" max="512" step="128" value="512" list="rangeList" onchange="document.getElementById('rangeValue').innerHTML = this.value;">
+                <datalist id="rangeList">
+                    <option value="128" label="128px">
+                    <option value="256" label="256px">
+                    <option value="384">
+                    <option value="512" label="512px">
+                </datalist>
+            <span id="rangeValue">512</span>
+        </div>
+    </main>
+    <script id="i" src='index.js'></script>
+</body>
+</html>
